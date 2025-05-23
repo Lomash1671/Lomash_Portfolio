@@ -1,0 +1,97 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Light theme */
+  --background: #f0f5f9;
+  --text-primary: #2d3436;
+  --text-secondary: #636e72;
+  --accent: #00bcd4;  /* Changed to a vibrant cyan */
+  --nav-text: #2d3436;
+  --nav-background: rgba(255, 255, 255, 0.95);
+  --nav-hover: #e0f7fa;  /* Lighter shade of accent */
+  --nav-accent: #00bcd4;
+  --gradient-start: #e3f2fd;
+  --gradient-end: #f0f5f9;
+}
+
+[data-theme='dark'] {
+  /* Dark theme */
+  --background: #0a192f;  /* Darker navy blue */
+  --text-primary: #e6f1ff;
+  --text-secondary: #8892b0;
+  --accent: #64ffda;  /* Teal accent */
+  --nav-text: #ccd6f6;
+  --nav-background: rgba(10, 25, 47, 0.95);
+  --nav-hover: #64ffda;
+  --nav-accent: #64ffda;
+  --gradient-start: #0a192f;
+  --gradient-end: #112240;  /* Slightly lighter navy */
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}

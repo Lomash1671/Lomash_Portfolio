@@ -1,0 +1,22 @@
+:root {
+  /* Light theme */
+  --background: #f8f8f8;
+  --text-primary: #0a192f;
+  --text-secondary: #112240;
+  --accent: #64ffda;
+}
+
+[data-theme='dark'] {
+  /* Dark theme */
+  --background: #0a192f;
+  --text-primary: #e6f1ff;
+  --text-secondary: #8892b0;
+  --accent: #64ffda;
+}
+
+/* Apply these variables to your elements */
+body {
+  background-color: var(--background);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
