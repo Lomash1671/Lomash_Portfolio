@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import { motion, useSpring } from 'framer-motion';
+import { motion, useSpring, AnimatePresence } from 'framer-motion';
 import Lenis from 'lenis';
+import Preloader from './components/Preloader';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import AboutMe from './components/AboutMe';
@@ -10,7 +11,11 @@ import DarkModeToggle from './components/DarkModeToggle';
 import './App.css';
 
 function App() {
+  const [loading, setLoading] = useState(true);
+  
   useEffect(() => {
+    if (loading) return; // Wait for preloader to finish
+    
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -43,33 +48,40 @@ function App() {
 
   return (
     <div className="App">
+      <AnimatePresence mode="wait">
+        {loading && <Preloader onComplete={() => setLoading(false)} />}
+      </AnimatePresence>
+
       <div className="custom-cursor" style={{ left: cursorPos.x, top: cursorPos.y }}></div>
       <motion.div 
         className="cursor-follower" 
         style={{ x: mouseXSpring, y: mouseYSpring }}
       ></motion.div>
 
-      <div className="noise-overlay"></div>
       <div className="gradient-blob blob-1"></div>
       <div className="gradient-blob blob-2"></div>
       
-      <Navbar />
-      <DarkModeToggle />
-      
-      <motion.main
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-      >
-        <Home />
-        <AboutMe />
-        <Projects />
-        <Contact />
-      </motion.main>
-      
-      <footer style={{ padding: '6rem 2rem 2rem', textAlign: 'center', opacity: 0.3, fontSize: '0.7rem', letterSpacing: '0.2em' }}>
-        &copy; {new Date().getFullYear()} LOMASH GUPTA &mdash; ENGINEERED FOR IMPACT.
-      </footer>
+      {!loading && (
+        <>
+          <Navbar />
+          <DarkModeToggle />
+          
+          <motion.main
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <Home />
+            <AboutMe />
+            <Projects />
+            <Contact />
+          </motion.main>
+          
+          <footer style={{ padding: '6rem 2rem 2rem', textAlign: 'center', opacity: 0.3, fontSize: '0.7rem', letterSpacing: '0.2em' }}>
+            &copy; {new Date().getFullYear()} LOMASH GUPTA &mdash; ENGINEERED FOR IMPACT.
+          </footer>
+        </>
+      )}
     </div>
   );
 }

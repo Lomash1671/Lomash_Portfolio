@@ -30,9 +30,9 @@ const Navbar = () => {
 
         <div className="nav-desktop-links">
           {navLinks.map((link) => (
-            <motion.a 
-              key={link.name} 
-              href={link.href} 
+            <motion.a
+              key={link.name}
+              href={link.href}
               className="nav-link-pill"
               whileHover={{ y: -2 }}
               whileTap={{ y: 0 }}
@@ -43,8 +43,8 @@ const Navbar = () => {
         </div>
 
         <div className="nav-actions">
-          <motion.a 
-            href="/resume.pdf" 
+          <motion.a
+            href="https://drive.google.com/file/d/1rYzhwTmjM0vVGoM1KmGnuPh8VC4xZJxh/view?usp=drive_link"
             className="resume-pill"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -52,8 +52,8 @@ const Navbar = () => {
           >
             GET CV
           </motion.a>
-          
-          <button 
+
+          <button
             className={`burger-menu ${isMenuOpen ? 'is-open' : ''}`}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
@@ -65,7 +65,7 @@ const Navbar = () => {
 
       <AnimatePresence>
         {isMenuOpen && (
-          <motion.div 
+          <motion.div
             className="mobile-overlay"
             initial={{ opacity: 0, x: '100%' }}
             animate={{ opacity: 1, x: 0 }}

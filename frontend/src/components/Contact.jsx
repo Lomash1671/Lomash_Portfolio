@@ -62,9 +62,9 @@ const Contact = () => {
             <div className="contact-method-item">
               <label>SOCIAL</label>
               <div className="social-pills-row">
-                <a href="#">GH</a>
-                <a href="#">LI</a>
-                <a href="#">IG</a>
+                <a href="https://github.com/Lomash1671" target="_blank" rel="noreferrer">GH</a>
+                <a href="https://linkedin.com/in/lomash-gupta-060668260/" target="_blank" rel="noreferrer">LI</a>
+                <a href="https://instagram.com/lomash_.71/" target="_blank" rel="noreferrer">IG</a>
               </div>
             </div>
           </div>
