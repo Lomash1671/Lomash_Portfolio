@@ -8,27 +8,29 @@ app.use(cors());
 app.use(express.json());
 
 app.post('/send-email', async (req, res) => {
-  const { name, email, subject, phone, message } = req.body;
+  const { name, email, message } = req.body;
 
   try {
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: process.env.EMAIL_USER, // your email
-        pass: process.env.EMAIL_PASS  // your app password
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS
       }
     });
 
     const mailOptions = {
       from: email,
       to: process.env.EMAIL_USER,
-      subject: `Contact Form: ${subject}`,
+      subject: `New Inquiry from ${name}`,
       html: `
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> ${phone}</p>
-        <p><strong>Message:</strong></p>
-        <p>${message}</p>
+        <div style="font-family: sans-serif; padding: 20px; color: #333;">
+          <h2>New Contact Form Submission</h2>
+          <p><strong>Name:</strong> ${name}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Message:</strong></p>
+          <p style="background: #f4f4f4; padding: 15px; border-radius: 5px;">${message}</p>
+        </div>
       `
     };
 

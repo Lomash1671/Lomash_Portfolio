@@ -1,12 +1,34 @@
-# React + Vite
+# Lomash Gupta — Portfolio v2.0
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A high-performance, editorial personal brand experience. Built with technical rigor and aesthetic precision.
 
-Currently, two official plugins are available:
+## 🚀 Vision
+The goal of this project was to move away from standard portfolio templates and create a digital space that feels human, story-driven, and technically sophisticated. It serves as a showcase for full-stack engineering and AI integration capabilities.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠 Tech Stack
+- **Frontend**: React 19, Framer Motion (for fluid animations), Vite.
+- **Styling**: Modern CSS with CSS Variables, Glassmorphism, and Fluid Typography.
+- **Backend**: Node.js & Express (Email Delivery System).
+- **Design Patterns**: Floating Island Navigation, Asymmetrical Editorial Grids, Motion reveals.
 
-## Expanding the ESLint configuration
+## 🎨 Design Philosophy
+- **Dark-Mode First**: Sophisticated palette using deep blacks and vibrant neon accents.
+- **Motion with Purpose**: Every animation is tied to user scroll or interaction, creating a sense of "life" in the UI.
+- **Human Content**: Breaking away from resume-speak to focus on narrative impact and problem-solving stories.
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📦 Getting Started
+1. **Frontend**:
+   ```bash
+   cd frontend
+   npm install
+   npm run dev
+   ```
+2. **Backend**:
+   ```bash
+   cd backend
+   npm install
+   npm start
+   ```
+
+---
+Built by Lomash Gupta.

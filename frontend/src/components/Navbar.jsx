@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import '../styles/Navbar.css';
 
 const Navbar = () => {
@@ -7,80 +8,87 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 20);
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleLinkClick = useCallback(() => {
-    setIsMenuOpen(false);
-  }, []);
-
-  const toggleMenu = useCallback(() => {
-    setIsMenuOpen(prev => !prev);
-  }, []);
+  const navLinks = [
+    { name: '// Index', href: '#home' },
+    { name: '// Story', href: '#about' },
+    { name: '// Works', href: '#projects' },
+    { name: '// Message', href: '#contact' },
+  ];
 
   return (
-    <nav
-      className={`navbar ${isScrolled ? 'scrolled' : ''}`}
-      role="navigation"
-      aria-label="Main navigation"
-    >
-      <div className="nav-container">
-
-        {/* LG logo */}
-        <a href="#home" className="nav-logo" onClick={handleLinkClick} aria-label="Homepage">
-          LG
+    <nav className={`nav-wrapper ${isScrolled ? 'is-scrolled' : ''}`}>
+      <div className="nav-island">
+        <a href="#home" className="brand-logo">
+          L<span>.</span>G
         </a>
 
-        <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`} id="primary-navigation">
-          <li>
-            <a href="#home" className="nav-item" onClick={handleLinkClick}>
-              Home
-            </a>
-          </li>
-          <li>
-            <a href="#about" className="nav-item" onClick={handleLinkClick}>
-              About
-            </a>
-          </li>
-          <li>
-            <a href="#projects" className="nav-item" onClick={handleLinkClick}>
-              Projects
-            </a>
-          </li>
-          <li>
-            <a href="#contact" className="nav-item" onClick={handleLinkClick}>
-              Contact
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://drive.google.com/drive/u/0/folders/1IBU0Rhvpwqm1XxEkLKgtmnkK2F-8wfYQ"
-              className="resume-btn"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={handleLinkClick}
+        <div className="nav-desktop-links">
+          {navLinks.map((link) => (
+            <motion.a 
+              key={link.name} 
+              href={link.href} 
+              className="nav-link-pill"
+              whileHover={{ y: -2 }}
+              whileTap={{ y: 0 }}
             >
-              Resume
-            </a>
-          </li>
-        </ul>
+              {link.name}
+            </motion.a>
+          ))}
+        </div>
 
-        <button
-          className={`menu-btn ${isMenuOpen ? 'open' : ''}`}
-          onClick={toggleMenu}
-          aria-label="Toggle menu"
-          aria-expanded={isMenuOpen}
-          aria-controls="primary-navigation"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+        <div className="nav-actions">
+          <motion.a 
+            href="/resume.pdf" 
+            className="resume-pill"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            target="_blank"
+          >
+            GET CV
+          </motion.a>
+          
+          <button 
+            className={`burger-menu ${isMenuOpen ? 'is-open' : ''}`}
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            <span></span>
+            <span></span>
+          </button>
+        </div>
       </div>
+
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div 
+            className="mobile-overlay"
+            initial={{ opacity: 0, x: '100%' }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: '100%' }}
+            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+          >
+            <div className="mobile-links">
+              {navLinks.map((link, i) => (
+                <motion.a
+                  key={link.name}
+                  href={link.href}
+                  initial={{ opacity: 0, x: 50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.1 }}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {link.name}
+                </motion.a>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };

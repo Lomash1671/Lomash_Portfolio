@@ -1,98 +1,86 @@
 import React from 'react';
-import profilePic from '../assets/lomash.jpg'; // Update with your actual image filename
+import { motion } from 'framer-motion';
+import profilePic from '../assets/lomash.jpg';
 import '../styles/AboutMe.css';
 
 const AboutMe = () => {
-  const skills = {
-    frontend: ['HTML', 'CSS', 'JavaScript', 'React.js', 'TypeScript', 'Tailwind CSS'],
-    backend: ['Node.js', 'Express.js', 'Python', 'MongoDB', 'PostgreSQL'],
-    tools: ['Git', 'GitHub', 'VS Code', 'Docker', 'Figma', 'Postman', 'Supabase', 'FastAPI']
-  };
+  const coreCompetencies = [
+    { title: "System Architecture", desc: "Designing scalable, decoupled full-stack ecosystems using modern Node.js and React patterns." },
+    { title: "AI Integration", desc: "Fusing computer vision models (YOLO, MediaPipe) with web interfaces for real-time intelligence." },
+    { title: "UX Engineering", desc: "Crafting fluid, motion-driven interfaces that prioritize performance and user accessibility." }
+  ];
 
   return (
     <section id="about" className="about-section">
-      <div className="about-container">
-        <h2 className="section-title">About Me</h2>
-        
-        <div className="about-content">
-          <div className="about-image">
-            <img 
-              src={profilePic}
-              alt="Lomash Gupta" 
-              className="profile-image"
-            />
+      <div className="section-label">ENGINEERING A STORY</div>
+      
+      <div className="about-grid">
+        <motion.div 
+          className="about-image-wrapper"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <img src={profilePic} alt="Lomash" className="personal-img" />
+          <div className="img-status">
+            <span className="dot"></span>
+            STAYING CURIOUS
           </div>
+        </motion.div>
 
-          <div className="about-text">
-            <h3>Hi, I'm <span className="highlight">Lomash Gupta</span></h3>
-            <p className="bio">
-              I'm a passionate Software Developer and AI/ML Enthusiast with a knack for solving real-world problems through code.
-              My expertise lies in crafting elegant, responsive, and scalable full-stack web applications.
-              Currently exploring machine learning, I enjoy integrating intelligent features into modern web solutions.
-              I thrive in collaborative environments and am constantly learning new technologies to stay ahead in the tech curve.
-            </p>
-
-            <div className="skills-section">
-              <h3>Technical Skills</h3>
-              <div className="skills-container">
-                <div className="skill-category">
-                  <h4>Frontend</h4>
-                  <ul>
-                    {skills.frontend.map((skill, index) => (
-                      <li key={index} className="skill-item">{skill}</li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="skill-category">
-                  <h4>Backend</h4>
-                  <ul>
-                    {skills.backend.map((skill, index) => (
-                      <li key={index} className="skill-item">{skill}</li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="skill-category">
-                  <h4>Tools & Technologies</h4>
-                  <ul>
-                    {skills.tools.map((skill, index) => (
-                      <li key={index} className="skill-item">{skill}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
+        <div className="about-content-wrapper">
+          <motion.div 
+            className="about-intro"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="about-heading">
+              I ARCHITECT <span className="italic-accent">experiences</span> <br />
+              THAT DEFINE <span className="accent-text">MODERN WEBS.</span>
+            </h3>
+            
+            <div className="about-bio">
+              <p>
+                Based in Jammu, I'm currently shaping my expertise in Computer Science at MIET. 
+                My philosophy is simple: **Technical complexity should feel invisible to the user.**
+              </p>
+              <p>
+                I specialize in bridging the gap between raw data/intelligence and beautiful, 
+                human-centric products. From healthcare platforms to AI sports analytics, 
+                I build for impact.
+              </p>
             </div>
+          </motion.div>
 
-            <div className="education-section">
-              <h3>Education</h3>
-              <div className="education-item">
-                <h4>Bachelor of Engineering in Computer Science and Engineering</h4>
-                <p>Model Institute of Engineering and Technology, Jammu</p>
-                <p>2022 - Present</p>
-              </div>
-              
-              <div className="education-item">
-                <h4>Senior Secondary (XII), Science</h4>
-                <p>Little Flower Higher Secondary School, Jammu</p>
-                <p>Completed June 2022</p>
-              </div>
-            </div>
-
-            <div className="cta-buttons">
-              <a 
-                href="https://drive.google.com/drive/u/0/folders/1IBU0Rhvpwqm1XxEkLKgtmnkK2F-8wfYQ" 
-                className="resume-button"
-                target="_blank"
-                rel="noopener noreferrer"
+          <div className="capabilities-stack">
+            {coreCompetencies.map((item, i) => (
+              <motion.div 
+                key={item.title}
+                className="competency-item"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 + (i * 0.1) }}
               >
-                Download Resume
-              </a>
-              <a href="#contact" className="contact-button">
-                Get in Touch
-              </a>
-            </div>
+                <div className="comp-header">
+                  <span className="comp-number">0{i+1}</span>
+                  <h4>{item.title}</h4>
+                </div>
+                <p>{item.desc}</p>
+              </motion.div>
+            ))}
           </div>
+
+          <motion.div 
+            className="tech-ticker"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+          >
+            <span>REACT</span> / <span>NODE.JS</span> / <span>PYTHON</span> / <span>SUPABASE</span> / <span>FRAMER MOTION</span> / <span>OPENCV</span>
+          </motion.div>
         </div>
       </div>
     </section>
