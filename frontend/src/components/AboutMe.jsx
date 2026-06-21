@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import profilePic from '../assets/lomash.jpg';
+import profilePic from '../assets/lomash.jpeg';
 import '../styles/AboutMe.css';
 
 const AboutMe = () => {
@@ -43,13 +43,13 @@ const AboutMe = () => {
             
             <div className="about-bio">
               <p>
-                Based in Jammu, I'm currently shaping my expertise in Computer Science at MIET. 
-                My philosophy is simple: **Technical complexity should feel invisible to the user.**
+                Based in Jammu, I'm currently pursuing my B.Tech in Computer Science at Model Institute of Engineering and Technology (MIET) with a CGPA of 6.44. 
+                My philosophy is simple: Technical complexity should feel invisible to the user.
               </p>
               <p>
-                I specialize in bridging the gap between raw data/intelligence and beautiful, 
-                human-centric products. From healthcare platforms to AI sports analytics, 
-                I build for impact.
+                I specialize in Full-Stack development and Machine Learning, with experience building
+                scalable applications at Yenew Technologies and UnCapp. 
+                From real-time collaboration platforms to AI sports analytics, I build for impact.
               </p>
             </div>
           </motion.div>
@@ -79,7 +79,7 @@ const AboutMe = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <span>REACT</span> / <span>NODE.JS</span> / <span>PYTHON</span> / <span>SUPABASE</span> / <span>FRAMER MOTION</span> / <span>OPENCV</span>
+            <span>REACT.JS</span> / <span>NODE.JS</span> / <span>EXPRESS.JS</span> / <span>MONGODB</span> / <span>POSTGRESQL</span> / <span>PYTHON</span> / <span>TENSORFLOW</span> / <span>AWS</span> / <span>DOCKER</span> / <span>SOCKET.IO</span>
           </motion.div>
         </div>
       </div>

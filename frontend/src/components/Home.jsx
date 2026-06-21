@@ -48,8 +48,7 @@ const Home = () => {
         </motion.div>
 
         <motion.h2 className="hero-subheading" variants={itemVariants}>
-          Architecting <span className="italic-accent">Scalable</span> Systems & <br />
-          Intelligent <span className="accent-text">AI Integrations</span>
+          Software Engineer | <span className="accent-text">Full Stack Developer</span>
         </motion.h2>
 
         <motion.p className="hero-description" variants={itemVariants}>
@@ -68,14 +67,9 @@ const Home = () => {
             </a>
             
             <div className="hero-socials">
-              <a href="https://github.com/Lomash1671" target="_blank" rel="noreferrer"><FaGithub /></a>
-              <a href="https://linkedin.com" target="_blank" rel="noreferrer"><FaLinkedinIn /></a>
+              <a href="https://github.com/Lomash1671" target="_blank" rel="noreferrer" title="GitHub"><FaGithub /></a>
+              <a href="https://linkedin.com/in/lomash-gupta-060668260/" target="_blank" rel="noreferrer" title="LinkedIn"><FaLinkedinIn /></a>
             </div>
-          </div>
-          
-          <div className="scroll-hint">
-            <div className="line"></div>
-            <span>SCROLL</span>
           </div>
         </motion.div>
       </motion.div>

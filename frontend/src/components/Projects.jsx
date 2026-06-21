@@ -3,38 +3,38 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import '../styles/Projects.css';
 
 // Import local images from assets folder
-import vridhubImage from '../assets/vridhub.png';
-import portfolioImage from '../assets/portfolio.png';
 import tennisImage from '../assets/tennis.png';
+import devcoreImage from '../assets/Devcore main.png.png';
+import aasraImage from '../assets/Aasrasewa.png.png';
 
 const Projects = () => {
   const projects = [
     {
       id: "// 01",
-      title: "VRIDHUB",
-      category: "Full Stack / Social Impact",
-      summary: "A healthcare ecosystem for senior citizens. Optimized for low-latency synchronization of medical records using Supabase and a custom React state management architecture.",
-      technologies: ["React", "Supabase", "Express", "REST"],
-      image: vridhubImage,
-      links: { github: "#", live: "#" }
+      title: "AASRASEWA",
+      category: "MERN Stack / AI / IoT",
+      summary: "Smart Relief & Stronger Communities. Built an AI & IoT-powered disaster management platform. Ranked Top 100 in Google Solution Challenge 2025 among 64,000+ teams.",
+      technologies: ["MERN Stack", "Python", "Flask", "AWS", "REST APIs"],
+      image: aasraImage, 
+      links: { github: "https://github.com/Praguni-Sanotra/AasraSewa", live: "https://github.com/Praguni-Sanotra/AasraSewa" }
     },
     {
       id: "// 02",
-      title: "TENNIS VISION",
-      category: "AI / Edge Computing",
-      summary: "High-speed athletic analysis. Implemented YOLOv8 pipelines to process 60FPS video feeds with <15ms latency for shot classification and pose correction.",
-      technologies: ["Python", "YOLOv8", "OpenCV", "FastAPI"],
-      image: tennisImage,
-      links: { github: "#", live: "#" }
+      title: "DEVCORE",
+      category: "Full Stack / Real-Time",
+      summary: "Real-Time Collaboration Platform. Developed and deployed a platform with real-time communication via Socket.IO and JWT-based authentication for scalable user interfaces.",
+      technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "Socket.IO"],
+      image: devcoreImage, 
+      links: { github: "https://github.com/Lomash1671", live: "https://dev-core-iota.vercel.app" }
     },
     {
       id: "// 03",
-      title: "ENGINEERED BRAND",
-      category: "UX Research / Frontend",
-      summary: "This very platform. A showcase of modern web capabilities, leveraging Framer Motion for spring-physics animations and a complex coordinate-based cursor system.",
-      technologies: ["React", "Framer", "Vite", "Modern CSS"],
-      image: portfolioImage,
-      links: { github: "#", live: "#" }
+      title: "TENNIS ANALYSIS",
+      category: "AI / ML / Computer Vision",
+      summary: "AI-Based Sports Performance System. Trained ML models for tennis shot classification using OpenCV and TensorFlow with high accuracy for performance visualization.",
+      technologies: ["Python", "OpenCV", "TensorFlow", "Scikit-learn", "React"],
+      image: tennisImage,
+      links: { github: "https://github.com/Lomash1671/TennisTrackerAI", live: "https://github.com/Lomash1671/TennisTrackerAI" }
     }
   ];
 
@@ -78,16 +78,11 @@ const Projects = () => {
 
               <div className="tile-links">
                 <motion.a 
-                  href={project.links.github} 
-                  className="tile-link-icon"
-                  whileHover={{ x: 10 }}
-                >
-                  SYSTEMS ARCHITECTURE →
-                </motion.a>
-                <motion.a 
                   href={project.links.live} 
                   className="tile-link-icon"
                   whileHover={{ x: 10 }}
+                  target="_blank"
+                  rel="noreferrer"
                 >
                   LIVE ENVIRONMENT →
                 </motion.a>

@@ -80,6 +80,10 @@ const Contact = () => {
               <a href="mailto:lomash1671@gmail.com" className="minimal-link">lomash1671@gmail.com</a>
             </div>
             <div className="contact-method-item">
+              <label>PHONE</label>
+              <a href="tel:+919797691071" className="minimal-link">+91 97976 91071</a>
+            </div>
+            <div className="contact-method-item">
               <label>SOCIAL</label>
               <div className="social-pills-row">
                 <a href="https://github.com/Lomash1671" target="_blank" rel="noreferrer">GH</a>

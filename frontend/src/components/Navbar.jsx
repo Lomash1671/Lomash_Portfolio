@@ -44,7 +44,7 @@ const Navbar = () => {
 
         <div className="nav-actions">
           <motion.a
-            href="https://drive.google.com/file/d/1rYzhwTmjM0vVGoM1KmGnuPh8VC4xZJxh/view?usp=drive_link"
+            href="/Lomash_Gupta_Resume_v3.pdf"
             className="resume-pill"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}

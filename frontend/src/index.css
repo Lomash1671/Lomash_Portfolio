@@ -126,7 +126,8 @@ h1, h2, h3, h4, .heading-font {
 /* Typography Enhancements */
 .hero-outline {
   color: transparent;
-  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
+  -webkit-text-stroke: 1px var(--text-muted);
+  opacity: 0.5;
 }
 
 .magnetic-btn {
