@@ -5,7 +5,7 @@ import '../styles/Projects.css';
 // Import local images from assets folder
 import tennisImage from '../assets/tennis.png';
 import devcoreImage from '../assets/Devcore main.png.png';
-import aasraImage from '../assets/Aasrasewa.png.png';
+import aasraImage from '../assets/AasraSewa.png.png';
 
 const Projects = () => {
   const projects = [
