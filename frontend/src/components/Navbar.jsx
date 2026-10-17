@@ -44,7 +44,7 @@ const Navbar = () => {
 
         <div className="nav-actions">
           <motion.a
-            href="/Lomash_Gupta_Resume_v3.pdf"
+            href="/Lomash_Gupta_Resume.pdf"
             className="resume-pill"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
